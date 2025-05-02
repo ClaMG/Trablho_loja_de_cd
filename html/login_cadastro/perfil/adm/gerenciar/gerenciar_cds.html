@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Cds</title>
+    <link rel="shortcut icon" href="../../../../../img/favicon/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../../../../css/adm/gerenciar/gerenciar_cds.css">
+    <link rel="stylesheet" href="../../../../../css/adm/gerenciar/gerenciar.css">
+    <link rel="stylesheet" href="../../../../../css/cabeçalhos/cabeçalho_com_login_sem_menu.css">
+
+    <script src="../../../../../js/adm/gerenciar/gerenciar_filtro.js" defer></script>
+    <script src="../../../../../js/mascara/mascara_ano.js" defer></script>
+    <script src="../../../../../js/mascaras/mascara_preco.js" defer></script>
+    <script src="../../../../../js/mascaras/mascara_temp.js" defer></script>
+</head>
+<body>
+
+    <!-- Cabeçalho da página (com user logado) -->
+    <header> 
+
+        <div id="parte_de_cima_cab">
+
+              <!-- Logo da página -->
+              <a href="#" id="logo"><img src="../../../../../img/cabeçario/logo.png" alt="Logo" id="img_logo"></a> 
+            
+            <!-- Barra de pesquisa -->
+            
+
+            <div id="login_carrinho"> <!-- Conta e Carrinho -->
+                    <a href="#"><img src="../../../../../img/cabeçario/icone_perfil.png" alt="Perfil" id="Perfil"></a><!-- Imagem de perfil -->
+
+                <a href="#"><img src="../../../../../img/cabeçario/icone_carrinho.png" alt="Carrinho" id="Carrinho"></a><!-- Ícone de carrinho -->
+            </div>
+        </div>
+    </header>
+
+    <button class="button_voltar"><a href="#" class="link_voltar">Voltar</a></button>
+    
+    
+    <h1 id="titulo">Gerenciar CDs</h1>
+    
+
+    <button id="btn_filtro">Filtros</button>
+
+    <section id="filtro">
+        <div id="separar">
+            <div class="separar_pc">
+                <div class="lado">
+                    <p class="p_filtro">Titulo:<input type="text" class="input_filtro"></p>
+                    <p class="p_filtro">Gênero:<input type="text" class="input_filtro"></p>
+                </div>
+                <div class="lado">
+                    <p class="p_filtro">Lançamento:<input type="text" class="input_filtro ano"></p>
+                    <p class="p_filtro">Durabilidade:<input type="text" class="input_filtro tempo"></p>
+                </div>
+                <div class="lado">
+                    <p class="p_filtro">Preço max:<input type="text" class="input_filtro preco"></p>
+                    <p class="p_filtro">Preço min:<input type="text" class="input_filtro preco"></p>
+                </div>
+            </div>
+            <div class="separar_pc">
+                <div class="lado">
+                    <p class="p_filtro">Artistas:<input type="text" class="input_filtro"></p>
+                    <p class="p_filtro">Musicas:<input type="text" class="input_filtro"></p>
+                </div>
+                <p class="p_filtro">Destaque:<input type="text" class="input_filtro"></p>
+            </div>
+        </div>
+        <div>
+            <button id="button_filtro">Procurar</button>
+            <button id="button_filtro">Todos</button>
+        </div>
+    </section>
+
+    <button class="button_voltar"><a href="#" class="link_voltar">Adicionar CDs</a></button>
+    <button id="button_excluir">Excluir</button>
+    
+    <section id="tabelao">
+        <table id="tabela">
+            <thead>
+                <tr id="itens_cabeca">
+                    <th class="titulo_item id">ID</th>
+                    <th class="titulo_item">Titulo</th>
+                    <th class="titulo_item">Capa</th>
+                    <th class="titulo_item">Estoque</th>
+                    <th class="titulo_item">Preço</th>
+                    <th class="titulo_item">Destaque</th>
+                    <th class="titulo_item">Lançamento</th>
+                    <th class="titulo_item">Gênero</th>
+                    <th class="titulo_item">Descrição</th>
+                    <th class="titulo_item">Artistas</th>
+                    <th class="titulo_item">Musicas</th>
+                    <th class="titulo_item">Procedencia</th>
+                    <th class="titulo_item">Promoção</th>
+                    <th class="titulo_item">Preço Final</th>
+                    <th class="titulo_item">Vendas</th>
+                    <th class="titulo_item">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="informações">
+                    <th class="info id">1</th>
+                    <th class="info">Titulo</th>
+                    <th class="info"><img src="../../../../../img/gerenciar/cd/capa1.jpg" alt="capa_cd" class="capa"></th>
+                    <th class="info">50</th>
+                    <th class="info">R$100,00</th>
+                    <th class="info"><img src="../../../../../img/gerenciar/cd/icone_destaque.png" alt="icone de sim" class="destaque"></th>
+                    <th class="info">1969</th>
+                    <th class="info">Gênero</th>
+                    <th class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla est possimus nemo esse quos</th>
+                    <th class="info">Artistas</th>
+                    <th class="info">Musicas</th>
+                    <th class="info">Procedencia</th>
+                    <th class="info" class="promocao">
+                        <input type="number" class="promocao_input">%
+                        <button class="button_promo">Aplicar</button>
+                    </th>
+                    <th class="info">R$50,00</th>
+                    <th class="info">5</th>
+                    <th class="info">
+                        <a href="#" class="link_acao">Editar</a> <br>
+                        <input type="checkbox" id="checkbox1" class="input"> <label for="checkbox1"></label>
+                    </th>
+                </tr>
+                <tr class="informações">
+                    <th class="info id">2</th>
+                    <th class="info">Titulo</th>
+                    <th class="info"><img src="../../../../../img/gerenciar/cd/capa2.jpg" alt="capa_cd" class="capa"></th>
+                    <th class="info">20</th>
+                    <th class="info">R$200,00</th>
+                    <th class="info"></th>
+                    <th class="info">1869</th>
+                    <th class="info">Gênero</th>
+                    <th class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla est possimus nemo esse quos</th>
+                    <th class="info">Artistas</th>
+                    <th class="info">Musicas</th>
+                    <th class="info">Procedencia</th>
+                    <th class="info" class="promocao">
+                        <input type="number" class="promocao_input">%
+                        <button class="button_promo">Aplicar</button>
+                    </th>
+                    <th class="info">R$100,00</th>
+                    <th class="info">5</th>
+                    <th class="info">
+                        <a href="#" class="link_acao">Editar</a> <br>
+                        <input type="checkbox" id="checkbox2" class="input"> <label for="checkbox2"></label>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

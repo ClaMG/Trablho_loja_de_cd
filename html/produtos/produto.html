@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhe do CD</title>
+    <link rel="shortcut icon" href="../../img/favicon/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../css/produto/produto.css">
+    <link rel="stylesheet" href="../../css/produto/produto_part2.css">
+    <link rel="stylesheet" href="../../css/produto/produto_part3.css">
+    <link rel="stylesheet" href="../../css/produto/produto_responsividade.css">
+    <link rel="stylesheet" href="../../css/cabeçalhos/cabeçalho_com_login.css">
+    <link rel="stylesheet" href="../../css/rodape/rodape.css">
+
+    <script src="../../js/quantidade/quantidade.js" defer></script>
+    <script src="../../js/todos_produtos/favoritos.js" defer></script>
+    <script src="../../js/produtos/butao.js" defer></script>
+    <script src="../../js/avaliar/estrelas.js" defer></script>
+    <script src="../../js/cabeçalho/menu.js" defer></script> <!-- Script do menu interativo -->
+</head>
+<body>
+  <!-- Cabeçalho da página (logado) -->
+  <header> 
+
+    <div id="parte_de_cima_cab">
+
+        <!-- Logo da página -->
+        <a href="#" id="logo"><img src="../../img/cabeçario/logo.png" alt="Logo" id="img_logo"></a>  
+        
+        <!-- Barra de pesquisa -->
+        <div id="barra_pesquisa">
+            <input type="checkbox" id="check"> <!-- Controle de visibilidade -->
+            <div id="complemento_pesquisa">
+
+                <!-- Campo de pesquisa -->
+                <input type="text" id="input_barra_pesquisa" placeholder="Buscar..." >
+
+                <!-- Botão de pesquisa -->
+                <label for="check" id="buttom_lupa">
+                    <img src="../../img/cabeçario/icone_lupa.png" alt="Lupa" id="lupa">
+                </label>
+            </div>
+        </div>
+
+        <div id="login_carrinho"> <!-- Login e Carrinho -->
+            <a href="#"><img src="../../img/cabeçario/icone_perfil.png" alt="Perfil" id="Perfil"></a><!-- Foto de perfil -->
+
+            <a href="#"><img src="../../img/cabeçario/icone_carrinho.png" alt="Carrinho" id="Carrinho"></a><!-- Ícone de carrinho -->
+        </div>
+    </div>
+
+    <hr style="color: #7b7a7a;"><!-- Linha separadora -->
+
+    <!-- Menu de navegação -->
+    <nav class="menu-underline">
+        <input type="checkbox" id="menu_toggle" class="menu_toggle"><!-- Menu responsivo -->
+        <label for="menu_toggle" class="menu_icon">&#9776;</label> 
+
+        <ul id="menu">
+
+            <li class="p_menu"><a href="#" class="a_menu">Inicio</a></li>
+            <li class="p_menu"><a href="#" class="a_menu">Produtos</a></li>
+            
+             <!-- Menu suspenso de gêneros musicais -->
+            <li class="p_menu" id="menu_genero">
+
+                <button onclick="aparecer_g('sumir_g')" class="b_menu">
+                    Gênero
+                </button>
+
+                <!-- Submenu de Gêneros -->
+                <ul class="subclasse_menu" id="sumir_g">
+                    
+                    <ul class="sub_subclasse_menu">
+                        <li><a href="#" class="sub_a">Clássica</a></li>
+                        <li><a href="#" class="sub_a">Eletrônica</a></li>
+                        <li><a href="#" class="sub_a">Forro</a></li>
+                        <li><a href="#" class="sub_a">Hip Hop</a></li>
+                        <li><a href="#" class="sub_a">MPB</a></li>
+                    </ul>
+                    
+                    <ul class="sub_subclasse_menu">
+                        <li><a href="#" class="sub_a">Pagode</a></li>
+                        <li><a href="#" class="sub_a">Pop</a></li>
+                        <li><a href="#" class="sub_a">Reggae</a></li>
+                        <li><a href="#" class="sub_a">Rock</a></li>
+                        <li><a href="#" class="sub_a">Sertanejo</a></li>
+                    </ul>
+                </ul>
+            </li>
+
+            <!-- Menu suspenso para Artistas -->
+            <li class="p_menu" id="arredondar_b">
+
+                <button onclick="aparecer_a('sumir_a')" class="b_menu">
+                    Artistas
+                </button>
+
+                <!-- Submenu de Artistas -->
+                <ul class="subclasse_menu_a" id="sumir_a">
+                    
+                    <ul class="sub_subclasse_menu">
+                        <li><a href="#" class="sub_a">Ludwing Beethowen</a></li>
+                        <li><a href="#" class="sub_a">Marshmello</a></li>
+                        <li><a href="#" class="sub_a">Luiz Gonzaga</a></li>
+                        <li><a href="#" class="sub_a">Snoop Dogg</a></li>
+                        <li><a href="#" class="sub_a">Maria Bethânia</a></li>
+                    </ul>
+                    
+                    <ul class="sub_subclasse_menu">
+                        <li><a href="#" class="sub_a">Péricles</a></li>
+                        <li><a href="#" class="sub_a">Michael Jackson</a></li>
+                        <li><a href="#" class="sub_a">Bob Marley</a></li>
+                        <li><a href="#" class="sub_a">Elvis Presley</a></li>
+                        <li><a href="#" class="sub_a">Luan Santana</a></li>
+                    </ul>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <section>
+        <div id="caminho">
+            <a href="#" id="home" class="link_caminho">
+                <img src="../../img/todos_produtos/icone_home.png" alt="Home" id="img_home">
+                <p>Home</p>
+            </a>
+            <div class="proxima_part">
+                <img src="../../img/todos_produtos/icone_seta_direita.png" alt="Seta" class="seta">
+                <a href="#" class="link_caminho">Produtos</a>
+            </div>
+            <div class="proxima_part">
+                <img src="../../img/todos_produtos/icone_seta_direita.png" alt="Seta" class="seta">
+                <a href="#" class="link_caminho">Cd</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="section_pri">
+    
+        <section id="section_cima">
+            <img src="../../img/destaque/capa_de_album_destaque_1.jpg" alt="Imagem do Cd" id="img">
+            <div id="corpo">
+                <div id="primeira">
+                    <h2><a href="#" id="link_artista">Nome Do Artista</a></h2>
+                    <img src="../../img/todos_produtos/icone_favoritos.png" alt="Favoritos" class="img_favorito">
+                </div>
+                <div>
+                    <h1 id="titulo">Nome do Cd</h1>
+                    <p id="estrelas"><img src="../../img/avaliacao/icone_estrelas.png" alt="Estrelas" class="img_estrelas"> 330 | avaliações</p>
+                </div>
+            
+                <div>
+                    <p id="preco">R$392,98</p>
+                    <p id="promo">Promação</p>
+                    <button id="but_car"><img src="../../img/cabeçario/icone_carrinho.png" alt="carrinho"> Adicionar ao Carrinho</button>
+                </div>
+                <div id="ultima">
+                    <div id="centralizar">
+                        <p id="quant">Quantidade:  <div class="input-wrapper">
+                            <button onclick="decrementar(this)">-</button>
+                            <input type="number" value="1" min="0" />
+                            <button onclick="incrementar(this)">+</button>
+                          </div></p>
+                    </div>
+                    <button id="comprar">Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <hr class="linha" id="linha_1">
+
+        <section id="butoes">
+          <div>
+            <button id="botao1" class="but_baixo ativo" >Descrição</button>
+            <button id="botao2" class="but_baixo">Músicas</button>
+            <button id="botao3" class="but_baixo">Avaliar</button>
+          </div>
+        
+          <div id="areaConteudo">
+            <div id="conteudo1" class="dentro ativo">
+              <div class="separar_tip_cont">
+                <p class="tipo">Título</p>
+                <p class="cont">Nome do cd</p>
+              </div>
+              <hr class="linha_separcao">
+              <div class="separar_tip_cont">
+                <p class="tipo">Disponibilidade</p>
+                <p class="cont">300</p>
+              </div>
+              <hr class="linha_separcao">
+              <div class="separar_tip_cont">
+                <p class="tipo">Artista</p>
+                <p class="cont">Nome do artista</p>
+              </div>
+              <hr class="linha_separcao">
+              <div class="separar_tip_cont">
+                <p class="tipo">Ano de Lançamento</p>
+                <p class="cont">15/03/2009</p>
+              </div>
+              <hr class="linha_separcao">
+              <div class="separar_tip_cont">
+                <p class="tipo">Gênero</p>
+                <p class="cont">Gênero</p>
+              </div>
+              <hr class="linha_separcao">
+              <div class="separar_tip_cont">
+                <p class="tipo">Procedência</p>
+                <p class="cont">Sla que porra é essa</p>
+              </div>
+              <hr class="linha_separcao">
+              <h1 id="decri">Descrição</h1>
+              <p id="p_des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae itaque sit nemo excepturi fugiat quisquam iste vero maxime! Quisquam atque libero voluptatem quas earum sapiente commodi maiores obcaecati nemo nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure reprehenderit corrupti nihil earum saepe sed, itaque impedit iste perferendis blanditiis quasi illo quisquam, consectetur facilis? Quo maiores sit magnam. Perspiciatis!</p>
+            </div>
+            <div id="conteudo2" class="dentro">
+              <div class="separar_tip_cont_m">
+                <p class="tipo">Nome</p>
+                <p class="tipo">Duração</p>
+                <p class="tipo">Áudio</p>
+              </div>
+              <hr class="linha_separcao m">
+              <div class="separar_tip_cont_m">
+                <p class="cont">Nome</p>
+                <p class="cont">20:00 minutos</p>
+                <p class="cont"> <audio controls class="audio">
+                  <source src="#" type="audio/mpeg">
+                  Seu navegador não suporta o elemento de áudio.
+            </audio></p>
+              </div>
+              <hr class="linha_separcao m">
+              <div class="separar_tip_cont_m">
+                <p class="cont">Nome</p>
+                <p class="cont">20:00 minutos</p>
+                <p class="cont"> <audio controls class="audio">
+                  <source src="#" type="audio/mpeg">
+                  Seu navegador não suporta o elemento de áudio.
+            </audio></p>
+              </div>
+              <hr class="linha_separcao m">
+              <div class="separar_tip_cont_m">
+                <p class="cont">Nome</p>
+                <p class="cont">20:00 minutos</p>
+                <p class="cont"> <audio controls class="audio">
+                  <source src="#" type="audio/mpeg">
+                  Seu navegador não suporta o elemento de áudio.
+            </audio></p>
+              </div>
+              <hr class="linha_separcao m">
+              <div class="separar_tip_cont_m">
+                <p class="cont">Nome</p>
+                <p class="cont">20:00 minutos</p>
+                <p class="cont"> <audio controls class="audio">
+                  <source src="#" type="audio/mpeg">
+                  Seu navegador não suporta o elemento de áudio.
+            </audio></p>
+              </div>       
+            </div>
+            <div id="conteudo3" class="dentro">
+              <section id="conteudo">
+                <!-- Título principal da página -->
+                <h1 id="titulo_avaliar">Avaliar</h1>
+    
+                <!-- Seção para avaliação com estrelas -->
+                <div id="avaliar_estrelas">
+                    <p id="avaliar_estrelas_titulo">Sua Avaliação</p>
+                    <div id="linha_de_estrelas">
+                        <!-- Cada div representa uma estrela interativa -->
+                        <div class="estrela" data-valor="1"></div>
+                        <div class="estrela" data-valor="2"></div>
+                        <div class="estrela" data-valor="3"></div>
+                        <div class="estrela" data-valor="4"></div>
+                        <div class="estrela" data-valor="5"></div>
+                    </div>
+                </div>
+    
+                <!-- Campo para o usuário escrever um comentário sobre o Cd -->
+                <div id="text_avalicao">
+                    <p id="text_avalicao_titulo">Sua avaliação sobre o Cd</p>
+                    <textarea rows="4" cols="50" placeholder="Digite seu texto aqui..." id="input_text"></textarea>
+                </div>
+    
+                <!-- Botão de envio da avaliação -->
+                <button id="enviar">Enviar</button>
+            </section>
+            </div>
+          </div>
+        </section>
+
+        <hr class="linha">
+
+        <section id="avaliacoes">
+          <h1 id="titulo_aval">Avaliações</h1>
+          <div class="aval">
+            <div class="direita_aval">
+              <div>
+                <h1 class="tipo">Nome do cliente</h1>
+                <p class="cont">15/03/2009</p>
+              </div>
+              <img src="../../img/avaliacao/icone_estrelas.png" alt="Estrelas" id="img_estrelas_2" class="img_estrelas">
+            </div>
+            <div>
+              <p class="tipo">Avaliação do Cd</p>
+              <p id="p_aval">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo voluptatum eum suscipit officia corporis? Sunt assumenda rem ea quae consectetur, nisi saepe vero quis officiis dolorem, minima tenetur repudiandae architecto?</p>
+            </div>
+          </div>
+          <div class="aval">
+            <div class="direita_aval">
+              <div>
+                <h1 class="tipo">Nome do cliente</h1>
+                <p class="cont">15/03/2009</p>
+              </div>
+              <img src="../../img/avaliacao/icone_estrelas.png" alt="Estrelas" id="img_estrelas_2" class="img_estrelas">
+            </div>
+            <div>
+              <p class="tipo">Avaliação do Cd</p>
+              <p id="p_aval">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo voluptatum eum suscipit officia corporis? Sunt assumenda rem ea quae consectetur, nisi saepe vero quis officiis dolorem, minima tenetur repudiandae architecto?</p>
+            </div>
+          </div>
+          <div class="aval">
+            <div class="direita_aval">
+              <div>
+                <h1 class="tipo">Nome do cliente</h1>
+                <p class="cont">15/03/2009</p>
+              </div>
+              <img src="../../img/avaliacao/icone_estrelas.png" alt="Estrelas" id="img_estrelas_2" class="img_estrelas">
+            </div>
+            <div>
+              <p class="tipo">Avaliação do Cd</p>
+              <p id="p_aval">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo voluptatum eum suscipit officia corporis? Sunt assumenda rem ea quae consectetur, nisi saepe vero quis officiis dolorem, minima tenetur repudiandae architecto?</p>
+            </div>
+          </div>
+        </section>
+    </section>
+    <footer>
+
+      <!-- Seção com a logo no rodapé, contendo duas linhas laterais -->
+      <section id="logo_rodape">
+          <div class="linha_logo_rodape"></div> <!-- Linha à esquerda -->
+          <!-- Logo central -->
+          <img src="../../img/cabeçario/logo.png" alt="Logo" id="img_rodape_logo">
+          <div class="linha_logo_rodape"></div> <!-- Linha à direita -->
+      </section>
+  
+      <!-- Corpo principal do rodapé -->
+      <section id="corpo_rodape">
+          <div id="parte_de_cima_rodape">
+              <h1 class="titulo">Sobre nós</h1>
+              <!-- Texto de descrição sobre a empresa ou site -->
+              <p id="sobre_texto_rodape">
+                  Somos uma loja online apaixonada por música, dedicada a quem valoriza a experiência de ouvir um bom CD. Trabalhamos com títulos novos e selecionados, dos clássicos aos lançamentos, sempre com qualidade e cuidado.Nossa missão é manter viva a cultura do CD, oferecendo um atendimento atencioso, envios rápidos e uma experiência de compra segura. Se você ama música de verdade, está no lugar certo. 
+              </p>
+          </div>
+  
+          <div id="parte_de_baixo_rodape">
+              <!-- Seção: Política Comercial -->
+              <div class="topicos_rodape">
+                  <h1 class="titulo">Política comercial</h1>
+                  <ul>
+                      <li class="lista_rodape"><a href="../rodape/politica_comercial.html#trocas_devolucoes" class="link_rodape">Trocas e Devoluções</a></li>
+                      <li class="lista_rodape"><a href="../rodape/politica_comercial.html#termos_uso" class="link_rodape">Termos de uso</a></li>
+                      <li class="lista_rodape"><a href="../rodape/politica_comercial.html#politica_privacidade" class="link_rodape">Políticas de privacidade</a></li>
+                      <li class="lista_rodape"><a href="../rodape/politica_comercial.html#direito_arrependimento" class="link_rodape">Direito de arrependimento</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Seção: Suporte -->
+              <div class="topicos_rodape">
+                  <h1 class="titulo">Suporte</h1>
+                  <ul>
+                      <li class="lista_rodape"><a href="../rodape/perguntas_frequentes.html" class="link_rodape">Perguntas Frequentes</a></li>
+                      <li class="lista_rodape"><a href="../rodape/avaliar.html" class="link_rodape">Avaliar</a></li>
+                      <li class="lista_rodape"><a href="../login_cadastro/perfil/butoes/sugestao.html" class="link_rodape">Recomendar Produtos</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Seção: Atendimento -->
+              <div class="topicos_rodape">
+                  <h1 class="titulo">Atendimento</h1>
+                  <ul>
+                      <li class="lista_rodape">
+                          <a href="mailto:codedisc@gmail.com" class="link_rodape">
+                              <img src="../../img/rodape/contato/icone_email.png" alt="Ícone email" class="img_rodape_contatos"> Email
+                          </a>
+                      </li>
+                      <li class="lista_rodape">
+                          <a href="tel:+5585900000000" class="link_rodape">
+                              <img src="../../img/rodape/contato/icone_telefone.png" alt="Ícone telefone" class="img_rodape_contatos"> Telefone
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </section>
+  
+      <!-- Linha separadora do rodapé -->
+      <hr id="hr_rodape">
+  
+      <!-- Seção final do rodapé -->
+      <section id="final_rodape">
+          <div>
+              <h1 class="titulo">Formas de pagamento</h1>
+              <!-- Ícones representando formas de pagamento -->
+              <img src="../../img/rodape/cartoes/icone_cartao1.png" alt="Cartão" class="img_cartao_rodape">
+              <img src="../../img/rodape/cartoes/icone_cartao2.png" alt="Cartão" class="img_cartao_rodape">
+              <img src="../../img/rodape/cartoes/icone_cartao1.png" alt="Cartão" class="img_cartao_rodape">
+              <img src="../../img/rodape/cartoes/icone_cartao2.png" alt="Cartão" class="img_cartao_rodape">
+              <img src="../../img/rodape/cartoes/icone_cartao1.png" alt="Cartão" class="img_cartao_rodape">
+              <img src="../../img/rodape/cartoes/icone_cartao2.png" alt="Cartão" class="img_cartao_rodape">
+          </div>
+  
+          <!-- Seção de redes sociais -->
+          <div id="redes_sociais_rodape">
+              <h1 class="titulo">Redes Sociais</h1>
+             <!-- Ícones representando redes sociais -->
+             <a href="https://www.instagram.com/code_disc_oficial"><img src="../../img/rodape/redes_sociais/icone_instagram.png" alt="Instagram" class="img_rodape_social"></a>
+             <a href="https://www.facebook.com/code_disc_oficial"><img src="../../img/rodape/redes_sociais/icone_facebook.png" alt="Facebook" class="img_rodape_social"></a>
+             <a href="https://twitter.com/code_disc_oficial"><img src="../../img/rodape/redes_sociais/icone_x.png" alt="X (Twitter)" class="img_rodape_social"></a>
+             <a href="https://www.tiktok.com/code_disc_oficial"><img src="../../img/rodape/redes_sociais/icone_tiktok.png" alt="TikTok" class="img_rodape_social"></a>
+             <a href="https://open.spotify.com/user/code_disc_oficial"><img src="../../img/rodape/redes_sociais/icone_spotify.png" alt="Spotify" class="img_rodape_social"></a>
+             <a href="https://www.youtube.com/code_disc_oficial"><img src="../../img/rodape/redes_sociais/icone_youtube.png" alt="YouTube" class="img_rodape_social"></a>
+          </div>
+      </section>
+  </footer>
+</body>
+</html>

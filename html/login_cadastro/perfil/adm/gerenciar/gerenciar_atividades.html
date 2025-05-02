@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Atividdades do User</title>
+    <link rel="shortcut icon" href="../../../../../img/favicon/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../../../../css/adm/gerenciar/gerenciar.css">
+    <link rel="stylesheet" href="../../../../../css/adm/gerenciar/gerenciar_at.css">
+    <link rel="stylesheet" href="../../../../../css/cabeçalhos/cabeçalho_com_login_sem_menu.css">
+</head>
+<body>
+
+     <!-- Cabeçalho da página (com user logado) -->
+     <header> 
+
+        <div id="parte_de_cima_cab">
+
+              <!-- Logo da página -->
+              <a href="#" id="logo"><img src="../../../../../img/cabeçario/logo.png" alt="Logo" id="img_logo"></a> 
+            
+            <!-- Barra de pesquisa -->
+            
+
+            <div id="login_carrinho"> <!-- Conta e Carrinho -->
+                    <a href="#"><img src="../../../../../img/cabeçario/icone_perfil.png" alt="Perfil" id="Perfil"></a><!-- Imagem de perfil -->
+
+                <a href="#"><img src="../../../../../img/cabeçario/icone_carrinho.png" alt="Carrinho" id="Carrinho"></a><!-- Ícone de carrinho -->
+            </div>
+        </div>
+    </header>
+    <button class="button_voltar"><a href="#" class="link_voltar">Voltar</a></button>
+    
+    <h1 class="titulo">Gerenciar Atividade dos Usuarios</h1>
+    <button id="button_excluir">Excluir</button>
+    <button class="button_voltar link_voltar">Editar</button>
+
+    <h1 class="subtitulo">Compras Realizadas</h1>
+    <section id="tabelao" >
+        <table id="tabela">
+            <thead>
+                <tr id="itens_cabeca">
+                    <th class="titulo_item id">ID</th>
+                    <th class="titulo_item">Titulo</th>
+                    <th class="titulo_item">Quantidade</th>
+                    <th class="titulo_item">Forma</th>
+                    <th class="titulo_item">Pagamento</th>
+                    <th class="titulo_item">Envio</th>
+                    <th class="titulo_item">Data</th>
+                    <th class="titulo_item">Status</th>
+                    <th class="titulo_item">Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="informações">
+                    <th class="info id">1</th>
+                    <th class="info">Titulo</th>
+                    <th class="info">50</th>
+                    <th class="info">naosei</th>
+                    <th class="info">Pix</th>
+                    <th class="info">Navio</th>
+                    <th class="info">05/03/2025</th>
+                    <th class="info">Chegando</th>
+                    <th class="info">
+                        <input type="checkbox" id="checkbox1" class="input"> <label for="checkbox1"></label>
+                    </th>
+                </tr>
+                <tr class="informações">
+                    <th class="info id">1</th>
+                    <th class="info">Titulo</th>
+                    <th class="info">50</th>
+                    <th class="info">naosei</th>
+                    <th class="info">Pix</th>
+                    <th class="info">Navio</th>
+                    <th class="info">05/03/2025</th>
+                    <th class="info">Chegando</th>
+                    <th class="info">
+                        <input type="checkbox" id="checkbox2" class="input"> <label for="checkbox2"></label>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <div id="lado">
+        <div class="div">
+            <h1 class="subtitulo">Itens no Carrinho</h1>
+            <section id="tab_carrinho">
+                <table id="carrinho">
+                    <thead>
+                        <tr id="itens_cabeca">
+                            <th class="titulo_item">CD</th>
+                            <th class="titulo_item">Quantidade</th>
+                            <th class="titulo_item">Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="informações">
+                            <th class="info">Titulo</th>
+                            <th class="info">50</th>
+                            <th class="info">
+                                <input type="checkbox" id="checkbox3" class="input"> <label for="checkbox3"></label>
+                            </th>
+                        </tr>
+                        <tr class="informações">
+                            <th class="info id">1</th>
+                            <th class="info">Titulo</th>
+                            <th class="info">50</th>
+                            <th class="info">
+                                <input type="checkbox" id="checkbox4" class="input"> <label for="checkbox4"></label>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <div class="div">
+            <h1 class="subtitulo">Favoritos</h1>
+            <section id="tab_favorito">
+                <table id="favorito">
+                    <thead>
+                        <tr id="itens_cabeca">
+                            <th class="titulo_item">CD</th>
+                            <th class="titulo_item">Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="informações">
+                            <th class="info">Titulo</th>
+                            <th class="info">
+                                <input type="checkbox" id="checkbox5" class="input"> <label for="checkbox5"></label>
+                            </th>
+                        </tr>
+                        <tr class="informações">
+                            <th class="info">Titulo</th>
+                            <th class="info">
+                                <input type="checkbox" id="checkbox6" class="input"> <label for="checkbox6"></label>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

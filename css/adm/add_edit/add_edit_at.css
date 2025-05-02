@@ -1,0 +1,40 @@
+:root{
+    --cinza-1: #303030;
+    --cinza-2: #5d5d5d;
+    --cinza-3: #6d6d6d;
+    --cinza-4: #7b7a7a;
+    --cinza-5: #888888;
+    --cinza-6: #949494;
+    --cinza-7: #abaaaa;
+    --branco: #ffffff;
+    --roxo: #7445cc;
+}
+
+#lado_button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cima{
+    display: flex;
+    flex-wrap: wrap; /* Permite que os campos se reorganizem quando necessário */
+    justify-content: center;
+}
+
+#compras{
+    width: 250px;
+}
+
+#carrinho{
+    width: 220px;
+}
+
+#favoitos{
+    width: 130px;
+}
+
+#lado_baixo{
+    display: flex;
+    gap:30px;
+}

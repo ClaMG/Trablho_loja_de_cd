@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Musicas</title>
+    <link rel="shortcut icon" href="../../../../../img/favicon/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../../../../css/adm/gerenciar/gerenciar.css">
+    <link rel="stylesheet" href="../../../../../css/adm/gerenciar/gerenciar_musica.css">
+    <link rel="stylesheet" href="../../../../../css/cabeçalhos/cabeçalho_com_login_sem_menu.css">
+
+    <script src="../../../../../js/adm/gerenciar/gerenciar_filtro.js" defer></script>
+    <script src="../../../../../js/mascaras/mascara_temp.js" defer></script>
+</head>
+<body>
+
+    <!-- Cabeçalho da página (com user logado) -->
+    <header> 
+
+        <div id="parte_de_cima_cab">
+
+              <!-- Logo da página -->
+              <a href="#" id="logo"><img src="../../../../../img/cabeçario/logo.png" alt="Logo" id="img_logo"></a> 
+            
+            <!-- Barra de pesquisa -->
+          
+
+            <div id="login_carrinho"> <!-- Conta e Carrinho -->
+                    <a href="#"><img src="../../../../../img/cabeçario/icone_perfil.png" alt="Perfil" id="Perfil"></a><!-- Imagem de perfil -->
+
+                <a href="#"><img src="../../../../../img/cabeçario/icone_carrinho.png" alt="Carrinho" id="Carrinho"></a><!-- Ícone de carrinho -->
+            </div>
+        </div>
+    </header>
+    
+    <button class="button_voltar"><a href="#" class="link_voltar">Voltar</a></button>
+
+    <h1 id="titulo">Gerenciar Músicas</h1>
+
+    <button id="btn_filtro">Filtros</button>
+    <section id="filtro">
+        <div id="separar">
+            <div class="lado">
+                <p class="p_filtro">Nome:<input type="text" class="input_filtro"></p>
+                <p class="p_filtro">Cds Associados:<input type="text" class="input_filtro"></p>
+            </div>
+            <div class="lado">
+                <p class="p_filtro">Maior Duração:<input type="text" class="input_filtro tempo"></p>
+                <p class="p_filtro">Menor Duração:<input type="text" class="input_filtro tempo"></p>
+            </div>
+        </div>
+        <div>
+            <button id="button_filtro">Procurar</button>
+            <button id="button_filtro">Todos</button>
+        </div>
+    </section>
+
+    <button class="button_voltar"><a href="#" class="link_voltar">Adicionar Musicas</a></button>
+    <button id="button_excluir">Excluir</button>
+    
+
+    <section id="tabelao">
+        <table id="tabela">
+            <thead>
+                <tr id="itens_cabeca">
+                    <th class="titulo_item id">ID</th>
+                    <th class="titulo_item">Nome</th>
+                    <th class="titulo_item">Duração</th>
+                    <th class="titulo_item">Audio</th>
+                    <th class="titulo_item">Cds Associados</th>
+                    <th class="titulo_item">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="informações">
+                    <th class="info id">1</th>
+                    <th class="info">Nome</th>
+                    <th class="info">5.40 min</th>
+                    <th class="info">
+                        <audio controls class="audio">
+                            <source src="#" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                      </audio>
+                    </th>
+                    <th class="info">Cds Associados</th>
+                    <th class="info">
+                        <a href="#" class="link_acao">Editar</a> <br>
+                        <input type="checkbox" id="checkbox1" class="input"> <label for="checkbox1"></label>
+                    </th>
+                </tr>
+                <tr class="informações">
+                    <th class="info id">2</th>
+                    <th class="info">Nome</th>
+                    <th class="info">7.40 min</th>
+                    <th class="info">
+                        <audio controls class="audio">
+                            <source src="#" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                      </audio>
+                    </th>
+                    <th class="info">Cds Associados</th>
+                    <th class="info">
+                        <a href="#" class="link_acao">Editar</a> <br>
+                        <input type="checkbox" id="checkbox2" class="input"> <label for="checkbox2"></label>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
