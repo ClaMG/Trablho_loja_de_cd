@@ -154,6 +154,8 @@ input[type=number] {
     text-align: center;
     height: 40px;
     border: none;
+    display: flex;
+    align-items: center;
 }
 
 .butao:hover, .audio_but:hover{
@@ -174,6 +176,10 @@ input[type=number] {
     align-items: center;
   }
 
+
+  .imagem_but{
+    width: 50px;
+  }
 /* parte de baixo*/
 
 #part_baixo{

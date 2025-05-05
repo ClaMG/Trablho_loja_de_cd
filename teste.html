@@ -3,33 +3,100 @@
 <head>
   <style>
     .overlay {
-      position: fixed; /* Fixa na tela */
+      position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
-      z-index: 9999; /* Alta prioridade na sobreposição */
-      display: none; /* Começa escondido */
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 9999;
+      display: none;
       justify-content: center;
       align-items: center;
       color: white;
       font-size: 24px;
+      flex-direction: column;
+    }
+
+    .botao {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff4d4d;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
 
-  <button onclick="mostrarDiv()">Ouvir Áudio</button>
+  <div id="musicas">
+    <div class="audio-bloco">
+      <button class="abrir-overlay">Ouvir Áudio 1</button>
+      <div class="overlay">
+        Esta é a Div 1
+        <button class="botao fechar-overlay">Voltar</button>
+      </div>
+    </div>
 
-  <div class="overlay" id="minhaDiv">
-    Esta é uma div sobre a tela!
+    <div class="audio-bloco">
+      <button class="abrir-overlay">Ouvir Áudio 2</button>
+      <div class="overlay">
+        Esta é a Div 2
+        <button class="botao fechar-overlay">Voltar</button>
+      </div>
+    </div>
+
+    <div class="audio-bloco">
+      <button class="abrir-overlay">Ouvir Áudio 3</button>
+      <div class="overlay">
+        Esta é a Div 3
+        <button class="botao fechar-overlay">Voltar</button>
+      </div>
+    </div>
   </div>
 
   <script>
-    function mostrarDiv() {
-      document.getElementById('minhaDiv').style.display = 'flex';
+    let contador = 0;
+
+    function sincronizarOverlays() {
+      const blocos = document.querySelectorAll('.bloco_audio');
+
+      blocos.forEach((bloco, index) => {
+        const botao = bloco.querySelector('.audio_but');
+        const overlay = bloco.querySelector('.corpo');
+
+        const id = `corpo-${index}`;
+        overlay.setAttribute('data-overlay-id', id);
+        botao.setAttribute('data-overlay-id', id);
+
+        contador++;
+      });
     }
+
+    function ativarAcoes() {
+      document.querySelectorAll('.audio_but').forEach(botao => {
+        botao.addEventListener('click', () => {
+          const id = botao.getAttribute('data-overlay-id');
+          const overlay = document.querySelector(`.corpo[data-overlay-id="${id}"]`);
+          if (overlay) overlay.style.display = 'flex';
+        });
+      });
+
+      document.querySelectorAll('.voltar').forEach(botao => {
+        botao.addEventListener('click', () => {
+          const overlay = botao.closest('.corpo');
+          overlay.style.display = 'none';
+        });
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      sincronizarOverlays(); // associa dinamicamente os data-overlay-id
+      ativarAcoes(); // ativa os eventos de abrir e fechar
+    });
   </script>
 
 </body>
