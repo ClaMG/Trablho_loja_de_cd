@@ -1,57 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Label automática sem ID</title>
   <style>
-    .checkbox-label {
-      display: inline-block;
-      padding: 8px;
-      margin: 5px;
-      border: 1px solid #333;
-      border-radius: 4px;
-      cursor: pointer;
+    .overlay {
+      position: fixed; /* Fixa na tela */
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+      z-index: 9999; /* Alta prioridade na sobreposição */
+      display: none; /* Começa escondido */
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
     }
   </style>
 </head>
 <body>
 
-  <div id="lista">
-    <!-- Elementos sem ID -->
-    <input type="checkbox">
-    <label class="checkbox-label">Check</label><br>
+  <button onclick="mostrarDiv()">Ouvir Áudio</button>
 
-    <input type="checkbox">
-    <label class="checkbox-label">Check</label><br>
+  <div class="overlay" id="minhaDiv">
+    Esta é uma div sobre a tela!
   </div>
 
-  <button onclick="adicionarNovo()">Adicionar novo checkbox</button>
-
   <script>
-    let contador = 0;
-
-    function sincronizarLabels() {
-      const lista = document.getElementById('lista');
-      const inputs = lista.querySelectorAll('input[type="checkbox"]');
-      const labels = lista.querySelectorAll('label.checkbox-label');
-
-      inputs.forEach((input, index) => {
-        const id = `check-${index}`;
-        input.id = id;
-
-        const label = labels[index];
-        if (label) {
-          label.setAttribute('for', id);
-          label.textContent = `Check ${index}`;
-        }
-      });
-
-      contador = inputs.length; // atualiza contador
+    function mostrarDiv() {
+      document.getElementById('minhaDiv').style.display = 'flex';
     }
-
-
-    // Rodar ao carregar a página
-    window.addEventListener('DOMContentLoaded', sincronizarLabels);
   </script>
 
 </body>

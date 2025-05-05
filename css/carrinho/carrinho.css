@@ -38,6 +38,7 @@
     margin: 0px auto ;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 15px;
     border-radius: 10px;
     background-color: var(--branco);
@@ -125,6 +126,7 @@ input[type=number] {
     flex-direction: column;
     gap: 30px;
     justify-content: center;
+   
 }
 
 
@@ -142,10 +144,35 @@ input[type=number] {
     border: none;
 }
 
-.butao:hover{
+.audio_but{
+    background-color: var(--roxo);
+    color: var(--branco);
+    padding: 5px;
+    border-radius: 5px;
+    width: 210px;
+    font-size: 25px;
+    text-align: center;
+    height: 40px;
+    border: none;
+}
+
+.butao:hover, .audio_but:hover{
     background-color: var(--cinza-1);
     transition: 0.2s;
 }
+
+.tela_audio {
+    position: fixed; /* Fixa na tela */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    z-index: 9999; /* Alta prioridade na sobreposição */
+    display: none; /* Começa escondido */
+    justify-content: center;
+    align-items: center;
+  }
 
 /* parte de baixo*/
 

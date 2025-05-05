@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="../../../../img/favicon/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="../../../../css/carrinho/carrinho.css">
+    <link rel="stylesheet" href="../../../../css/carrinho/musica.css">
     <link rel="stylesheet" href="../../../../css/cabeçalhos/cabeçalho_com_login.css"> <!-- Estilos do cabeçalho -->
 
     <script src="../../../../js/cabeçalho/menu.js" defer></script>
@@ -132,11 +133,37 @@
                         <p class="sub_titulo">Subtotal: <span class="info_sub">R$150</span></p>
                     </div>
                 </div>
+                <button onclick="mostrarDiv()" class="audio_but"><img src="#" alt="Audio">Ouvir Áudio</button>
                 <div class="buttons">
                     <button class="butao">Atualizar</button>
                     <button class="butao">Deletar</button>
                 </div>
             </div>
+
+            <div class="tela_audio" id="minhaDiv">
+                <div class="corpo">
+                    <div>
+                        <h1 class="nome_audio">Nome da Música</h1>
+                        <p class="subtitulo">Duração:<span class="dados"> 5.40min</span></p>
+                        <p class="subtitulo">Compositor(es):<span class="dados"> Nome dos artistas</span></p>
+                        <p class="cds">Cds associados:
+                            <ul class="lista">
+                                <li><a href="#">Cd_1</a></li>
+                                <li><a href="#">Cd_2</a></li>
+                                <li><a href="#">Cd_3</a></li>
+                                <li><a href="#">Cd_4</a></li>
+                                <li><a href="#">Cd_5</a></li>
+                            </ul>
+                        </p>
+                    </div>
+                    <h2 class="titulo_audio">Áudio</h2>
+                    <audio controls class="audio">
+                        <source src="#" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                    <button class="butao" onclick="esconderDiv()">Voltar</button>
+                </div>
+              </div>
             <div class="produto">
                 <div class="esquerda">
                     <img src="../../../../img/destaque/capa_de_album_destaque_2.jpg" alt="Imagem do cd" class="img">
@@ -203,5 +230,14 @@
         <img src="../../../../img/img_cantos/img_cantos.png" alt="notas musicais" class="img_esquerda" id="sumir_d">
     </div>
       
+
+    <script>
+        function mostrarDiv() {
+          document.getElementById('minhaDiv').style.display = 'flex';
+        }
+        function esconderDiv() {
+      document.getElementById('minhaDiv').style.display = 'none';
+    }
+      </script>
 </body>
 </html>
