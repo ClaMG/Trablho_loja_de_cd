@@ -75,11 +75,17 @@
 @media only screen and (max-width: 768px){
    
     .corpo{
-        padding: 10px;
+        width: 490px;
     }
     
-    .nome{
+    .nome_audio{
         font-size: 50px;
+    }
+
+    .audio {
+       
+        width: 400px;
+        height: 40px;
     }
 
 }

@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const botoesOuvir = document.querySelectorAll('.audio_but');
     const botoesVoltar = document.querySelectorAll('.butao.voltar');

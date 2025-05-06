@@ -180,6 +180,13 @@ input[type=number] {
   .imagem_but{
     width: 50px;
   }
+
+  .butons_lado{
+    display: flex;
+    width: 500px;
+    align-items: center;
+    justify-content: space-between;
+  }
 /* parte de baixo*/
 
 #part_baixo{
@@ -263,7 +270,18 @@ input[type=number] {
     .produto {
         width: 450px;
         padding: 10px;
+        flex-direction: column;
     }
+
+    .buttons{
+        gap: 10px;
+        flex-direction: row;
+    }
+
+    .butons_lado{
+        flex-direction: column;
+        margin-top: 20px;
+      }
 
     /*Imagens laterais*/
     #sumir_d, #sumir_e{
