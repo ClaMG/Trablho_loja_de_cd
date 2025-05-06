@@ -52,11 +52,9 @@ sugestao.html > cabeçalho_com_login_sem_menu.css
 produto.html  > cabeçalho_com_login.css > rodape.css
 
 
-Falta telas:
+Falta:
 
--gerenciar_atividades
--comprar
--finalizar compra
+estilizar alert
 
 Organização:
 

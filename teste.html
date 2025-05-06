@@ -2,11 +2,11 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Alerta com Botão</title>
+  <title>Prévia de Áudio com Alerta</title>
   <style>
-    .alerta {
+    .alerta_previa {
       display: none;
-      background-color: #4CAF50; /* verde */
+      background-color: #f44336;
       color: white;
       padding: 15px;
       border-radius: 8px;
@@ -17,14 +17,13 @@
       z-index: 9999;
       font-family: Arial, sans-serif;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: opacity 0.3s ease;
     }
 
     button {
       padding: 10px 20px;
-      border: none;
       background-color: #2196F3;
       color: white;
+      border: none;
       border-radius: 5px;
       cursor: pointer;
       font-size: 16px;
@@ -37,21 +36,37 @@
 </head>
 <body>
 
-<button onclick="mostrarAlerta()">Clique aqui</button>
+<audio id="audio_musica">
+  <source src="sua-musica.mp3#t=0,50" type="audio/mpeg">
+  Seu navegador não suporta o elemento de áudio.
+</audio>
 
-<div id="meuAlerta" class="alerta">
-  Ação realizada com sucesso!
+<button id="btn_ouvir">Ouvir Prévia</button>
+
+<div id="alerta_previa" class="alerta_previa">
+  Prévia limitada a 10 segundos.
 </div>
 
 <script>
-  function mostrarAlerta() {
-    const alerta = document.getElementById('meuAlerta');
-    alerta.style.display = 'block';
+  const audio = document.getElementById('audio_musica');
+  const botao = document.getElementById('btn_ouvir');
+  const alerta = document.getElementById('alerta_previa');
+
+  botao.addEventListener('click', () => {
+    audio.play();
 
     setTimeout(() => {
-      alerta.style.display = 'none';
-    }, 3000); // esconde após 3 segundos
-  }
+      if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+        alerta.style.display = 'block';
+
+        setTimeout(() => {
+          alerta.style.display = 'none';
+        }, 10000);
+      }
+    }, 5000); // 50 segundos
+  });
 </script>
 
 </body>
