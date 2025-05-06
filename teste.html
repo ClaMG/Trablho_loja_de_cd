@@ -1,103 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+  <meta charset="UTF-8">
+  <title>Alerta com Botão</title>
   <style>
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.7);
-      z-index: 9999;
+    .alerta {
       display: none;
-      justify-content: center;
-      align-items: center;
+      background-color: #4CAF50; /* verde */
       color: white;
-      font-size: 24px;
-      flex-direction: column;
+      padding: 15px;
+      border-radius: 8px;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: opacity 0.3s ease;
     }
 
-    .botao {
-      margin-top: 20px;
+    button {
       padding: 10px 20px;
-      background-color: #ff4d4d;
       border: none;
-      border-radius: 5px;
+      background-color: #2196F3;
       color: white;
+      border-radius: 5px;
       cursor: pointer;
       font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #0b7dda;
     }
   </style>
 </head>
 <body>
 
-  <div id="musicas">
-    <div class="audio-bloco">
-      <button class="abrir-overlay">Ouvir Áudio 1</button>
-      <div class="overlay">
-        Esta é a Div 1
-        <button class="botao fechar-overlay">Voltar</button>
-      </div>
-    </div>
+<button onclick="mostrarAlerta()">Clique aqui</button>
 
-    <div class="audio-bloco">
-      <button class="abrir-overlay">Ouvir Áudio 2</button>
-      <div class="overlay">
-        Esta é a Div 2
-        <button class="botao fechar-overlay">Voltar</button>
-      </div>
-    </div>
+<div id="meuAlerta" class="alerta">
+  Ação realizada com sucesso!
+</div>
 
-    <div class="audio-bloco">
-      <button class="abrir-overlay">Ouvir Áudio 3</button>
-      <div class="overlay">
-        Esta é a Div 3
-        <button class="botao fechar-overlay">Voltar</button>
-      </div>
-    </div>
-  </div>
+<script>
+  function mostrarAlerta() {
+    const alerta = document.getElementById('meuAlerta');
+    alerta.style.display = 'block';
 
-  <script>
-    let contador = 0;
-
-    function sincronizarOverlays() {
-      const blocos = document.querySelectorAll('.bloco_audio');
-
-      blocos.forEach((bloco, index) => {
-        const botao = bloco.querySelector('.audio_but');
-        const overlay = bloco.querySelector('.corpo');
-
-        const id = `corpo-${index}`;
-        overlay.setAttribute('data-overlay-id', id);
-        botao.setAttribute('data-overlay-id', id);
-
-        contador++;
-      });
-    }
-
-    function ativarAcoes() {
-      document.querySelectorAll('.audio_but').forEach(botao => {
-        botao.addEventListener('click', () => {
-          const id = botao.getAttribute('data-overlay-id');
-          const overlay = document.querySelector(`.corpo[data-overlay-id="${id}"]`);
-          if (overlay) overlay.style.display = 'flex';
-        });
-      });
-
-      document.querySelectorAll('.voltar').forEach(botao => {
-        botao.addEventListener('click', () => {
-          const overlay = botao.closest('.corpo');
-          overlay.style.display = 'none';
-        });
-      });
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      sincronizarOverlays(); // associa dinamicamente os data-overlay-id
-      ativarAcoes(); // ativa os eventos de abrir e fechar
-    });
-  </script>
+    setTimeout(() => {
+      alerta.style.display = 'none';
+    }, 3000); // esconde após 3 segundos
+  }
+</script>
 
 </body>
 </html>
