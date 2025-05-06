@@ -96,20 +96,15 @@ main{
     z-index: 0; /* Organiza a camada do elemento */
 }
 
-/* Estilos para o botão "olho" (mostrar/ocultar senha) */
-#olho {
-    background-color: transparent; /* Fundo transparente */
-    border: none; /* Remove a borda */
-    position: absolute; /* Posicionamento absoluto */
-    z-index: 1; /* Organiza a camada do elemento */
-    margin-left: -40px;
-    margin-top: 2px;
-}
 
 /* Tamanho da imagem do ícone do olho */
 #img_olho {
     width: 30px;
     height: 25px;
+    position: absolute;
+    margin-left: -35px;
+    margin-top: 2px;
+    z-index: 1;
 }
 
 /* Estilos para os links relacionados à senha */
@@ -322,7 +317,7 @@ main{
     }
 
     /* Aumentar ícone do olho */
-    #olho {
+    #img_olho {
         width: 30px;
         height: 30px;
     }
