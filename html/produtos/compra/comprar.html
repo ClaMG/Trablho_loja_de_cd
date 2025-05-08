@@ -11,7 +11,9 @@
 
     <script src="../../../js/mascaras/mascara_cep.js" defer></script>
     <script src="../../../js/mascaras/mascara_num.js" defer></script>
+    <script src="../../../js/mascaras/mascara_cart.js" defer></script>
     <script src="../../../js/compra/compra.js" defer></script>
+    <script src="../../../js/compra/compra2.js" defer></script>
 </head>
 <body>
     <header> 
@@ -52,8 +54,11 @@
                         <select class="tipo">
                         <option value="">Selecione...</option>
                         <option value="">Boleto</option>
-                        <option value="">Cartão</option>
+                        <option value="cart">Cartão</option>
                     </select>
+                    </div>
+                    <div id="cart" class="item_input">
+                        <input type="text" id="numero_cartao" placeholder="Número do Cartão" class="input" maxlength="19">                         
                     </div>
                     <p class="subtitulo_p">Tipo de Envio:</p>
                     <select class="tipo">
@@ -106,19 +111,7 @@
     </div>
 
     <script>
-        const pagamentoSelect = document.querySelectorAll("select.tipo")[0]; // Primeiro select é Forma de Pagamento
-        const divPraso = document.getElementById("praso");
-    
-        pagamentoSelect.addEventListener("change", () => {
-            if (pagamentoSelect.value === "praso") {
-                divPraso.style.display = "block";
-            } else {
-                divPraso.style.display = "none";
-            }
-        });
-    
-        // Oculta inicialmente
-        divPraso.style.display = "none";
+       
     </script>
     
     

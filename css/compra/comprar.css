@@ -106,6 +106,10 @@ main{
     max-width: 350px;
 }
 
+.input:focus{
+    outline: none; /* Remove o outline ao focar */
+}
+
 .separar{
     display: flex; /* Flexbox para alinhar itens */
     flex-direction: column; /* Organiza os campos em coluna */
