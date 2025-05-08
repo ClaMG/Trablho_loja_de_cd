@@ -1,0 +1,50 @@
+:root {
+    --cinza-1: #303030;
+    --cinza-2: #5d5d5d;
+    --cinza-3: #6d6d6d;
+    --cinza-4: #7b7a7a;
+    --cinza-5: #888888;
+    --cinza-6: #949494;
+    --cinza-7: #abaaaa;
+    --branco: #ffffff;
+    --roxo: #7445cc;
+    --roxo-claro: #a78bfa;
+  }
+
+  .audio_player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--roxo);
+    padding: 10px 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .but {
+    background: var(--roxo-claro);
+    color: var(--branco);
+    border: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .but:hover {
+    background: #c4b5fd;
+  }
+
+  input[type="range"] {
+    flex: 1;
+    height: 5px;
+    accent-color: var(--roxo-claro);
+    border-radius: 5px;
+  }
+
+  .audio {
+    display: none;
+  }

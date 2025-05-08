@@ -95,15 +95,12 @@
 
 .separar_tip_cont_m{
     display: flex;
-    gap: 250px;
     align-items: center;
   }
 
-  .audio {
-    border: 2px solid var(--cinza-4);
-    border-radius: 30px;
-    height: 20px;
-}
+  .titulo_audio{
+    margin-left: 220px;
+  }
 
 /* Avaliar*/
 

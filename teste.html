@@ -2,88 +2,108 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Prévia de Áudio com Alerta</title>
+  <title>Player Múltiplo</title>
   <style>
-
-:root{
-    --cinza-1: #303030;
-    --cinza-2: #5d5d5d;
-    --cinza-3: #6d6d6d;
-    --cinza-4: #7b7a7a;
-    --cinza-5: #888888;
-    --cinza-6: #949494;
-    --cinza-7: #abaaaa;
-    --branco: #ffffff;
-    --roxo: #7445cc;
-}
-
-    .alerta_previa {
-      display: none;
-      background-color: var(--roxo);
-      color: white;
-      padding: 15px;
-      border-radius: 8px;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 500px;
-      text-align: center;
-      font-size: 50px;
-      transform: translateX(-50%);
-      z-index: 9999;
-      font-family: Arial, sans-serif;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    :root {
+      --roxo: #7445cc;
+      --roxo-claro: #a78bfa;
+      --branco: #fff;
     }
 
-    button {
-      padding: 10px 20px;
-      background-color: #2196F3;
-      color: white;
+    .audio_player {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--roxo);
+      padding: 10px 15px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .but {
+      background: var(--roxo-claro);
+      color: var(--branco);
       border: none;
-      border-radius: 5px;
+      font-size: 18px;
+      padding: 8px 12px;
+      border-radius: 50%;
       cursor: pointer;
-      font-size: 16px;
     }
 
-    button:hover {
-      background-color: #0b7dda;
+    .but:hover {
+      background: #c4b5fd;
+    }
+
+    input[type="range"] {
+      flex: 1;
+      height: 5px;
+      accent-color: var(--roxo-claro);
+      border-radius: 5px;
+    }
+
+    .audio {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-<audio id="audio_musica">
-  <source src="sua-musica.mp3#t=0,50" type="audio/mpeg">
-  Seu navegador não suporta o elemento de áudio.
-</audio>
+  <!-- Player 1 -->
+  <div class="audio_player">
+    <audio class="audio">
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    <button class="but play">▶</button>
+    <button class="but pause">⏸</button>
+    <input type="range" class="barra" min="0" value="0" step="1">
+  </div>
 
-<button id="btn_ouvir">Ouvir Prévia</button>
+  <!-- Player 2 -->
+  <div class="audio_player">
+    <audio>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+    </audio>
+    <button class="but play">▶</button>
+    <button class="but pause">⏸</button>
+    <input type="range" class="barra" min="0" value="0" step="1">
+  </div>
 
-<div id="alerta_previa" class="alerta_previa">
-  Prévia limitada a 10 segundos.
-</div>
+  <script>
+    const players = document.querySelectorAll('.audio_player');
 
-<script>
-  const audio = document.getElementById('audio_musica');
-  const botao = document.getElementById('btn_ouvir');
-  const alerta = document.getElementById('alerta_previa');
+    players.forEach(player => {
+      const audio = player.querySelector('audio');
+      const playBtn = player.querySelector('.play');
+      const pauseBtn = player.querySelector('.pause');
+      const barra = player.querySelector('.barra');
 
-  botao.addEventListener('click', () => {
-    audio.play();
+      // Tocar o áudio e pausar os outros
+      playBtn.addEventListener('click', () => {
+        // Pausa todos os outros
+        players.forEach(p => {
+          const a = p.querySelector('audio');
+          if (a !== audio) a.pause();
+        });
+        audio.play();
+      });
 
-    setTimeout(() => {
-      if (!audio.paused) {
+      pauseBtn.addEventListener('click', () => {
         audio.pause();
-        audio.currentTime = 0;
-        alerta.style.display = 'block';
+      });
 
-        setTimeout(() => {
-          alerta.style.display = 'none';
-        }, 10000);
-      }
-    }, 1000); // 50 segundos
-  });
-</script>
+      audio.addEventListener('timeupdate', () => {
+        barra.max = audio.duration;
+        barra.value = audio.currentTime;
+      });
+
+      barra.addEventListener('input', () => {
+        audio.currentTime = barra.value;
+      });
+    });
+  </script>
 
 </body>
 </html>
