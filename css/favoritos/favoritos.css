@@ -240,6 +240,11 @@
     transition: transform 0.2s ease-in-out; /* Suaviza o efeito de clique */
 }
 
+.but{
+    border: none;
+    background-color: transparent;
+}
+
 /* === EFEITO DE CLIQUE NO ÍCONE DE FAVORITO === */
 .img_favorito:active {
     transform: scale(0.95); /* Reduz o tamanho ligeiramente ao clicar */
