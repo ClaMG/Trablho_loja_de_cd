@@ -12,6 +12,7 @@
     <script src="../../../js/mascaras/mascara_cep.js" defer></script>
     <script src="../../../js/mascaras/mascara_num.js" defer></script>
     <script src="../../../js/mascaras/mascara_cart.js" defer></script>
+    <script src="../../../js/mascaras/mascara_data.js" defer></script>
     <script src="../../../js/compra/compra.js" defer></script>
     <script src="../../../js/compra/compra2.js" defer></script>
 </head>
@@ -40,7 +41,7 @@
             <!-- Título principal da página -->
             <h1 id="titulo">Comprar</h1>
 
-            <h1 class="subtitulo">Finazar Compra</h1>
+            <h1 class="subtitulo">Finalizar Compra</h1>
             <div class="inputs">
                 <div class="separar cima">
                     <div class="part">
@@ -67,11 +68,11 @@
                         </select>
                     </div>
                     <div id="cart" class="item_input">
-                        <input type="text" placeholder="Nome" class="input">                         
-                        <input type="text" placeholder="Nome" class="input">                         
-                        <input type="text" placeholder="Nome" class="input">                         
-                        <input type="text" placeholder="Nome" class="input">                         
+                        <input type="text" placeholder="Nome no Cartão" class="input">                         
                         <input type="text" id="numero_cartao" placeholder="Número do Cartão" class="input" maxlength="19">                         
+                        <input type="text" placeholder="Validade" class="input data" maxlength="10">                         
+                        <input type="text" placeholder="CVV" class="input num" maxlength="3">                         
+                        <input type="text" placeholder="Número de parcelas" class="input">                         
                     </div>
                     <div id="pix" class="item_input">
                         <img src="#" alt="Qrcode do pix">                        
