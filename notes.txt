@@ -1,65 +1,92 @@
-icones: https://icons8.com.br/icons/set/lupa-de-pesquisa-musica
-
-img slide tamanho: 1800x600 e 1040x600, https://br.freepik.com/fotos-gratis/animada-e-animada-garota-ruiva-em-extase-sorrindo-fascinada-e-divertida-mostrando-grande-e-grande-obj_37025767.htm#fromView=keyword&page=1&position=3&uuid=9853e3a3-4d0b-4d08-ad58-c09494aa2c86&query=1800x600
-
-imagem destaque: 1200x1200
-
-img silde artista: ?? x ?? e 1800x500
-
-Gêneros:
-
-Clássica
-Eletrônica
-Forro
-Hip Hop
-MPB
-Pagode
-Pop
-Reggae
-Rock
-Sertanejo
-
-obsevação: os links dos slides podem ser removidos, contanto que o css que estiver na 'class' do 'a', seja colocada para 'class' da imagem.
-
-Codigos feitos:
-
-cadastro.html > cabeçalho_sem_login.css
-login.html > cabeçalho_sem_login.css
-adm.html > cabeçalho_com_login.css
-alterar_dados.html > cabeçalho_com_login_sem_menu.css
-user.html > cabeçalho_com_login.css
-politica_comercial.html > cabeçalho_com_login.css > rodape.css
-avaliar.html > cabeçalho_com_login_sem_menu.css
-perguntas_frequentes.html > cabeçalho_com_login.css > rodape.css
-todos_os_produtos.html > cabeçalho_com_login.css > rodape.css
-add_artista.html > cabeçalho_com_login_sem_menu.css
-add_cds.html > cabeçalho_com_login_sem_menu.css
-add_user.html > cabeçalho_com_login_sem_menu.css
-add_musica.html > cabeçalho_com_login_sem_menu.css
-editar_artistas.html > cabeçalho_com_login_sem_menu.css
-editar_cds.html > cabeçalho_com_login_sem_menu.css
-editar_user.html > cabeçalho_com_login_sem_menu.css
-editar_musicas.html > cabeçalho_com_login_sem_menu.css
-gerenciar_artistas.html > cabeçalho_com_login_sem_menu.css
-gerenciar_cds.html > cabeçalho_com_login_sem_menu.css
-gerenciar_user.html > cabeçalho_com_login_sem_menu.css
-gerenciar_musicas.html > cabeçalho_com_login_sem_menu.css
-favoritos.html > cabeçalho_com_login.css > rodape.css
-artista.html > cabeçalho_com_login.css > rodape.css
-carrinho.html > cabeçalho_com_login.css
-historico_compras.html > cabeçalho_com_login.css
-sugestao.html > cabeçalho_com_login_sem_menu.css
-produto.html  > cabeçalho_com_login.css > rodape.css
-
-
-Falta:
-
-estilizar alert
-
 Organização:
 
 php_matriz{
-    >css{...}
+    >css{
+        >adm{
+            >add_edit{
+                -add_edit_at
+                -add_edit_cds
+                -add_edit_musicas
+                -add_edit
+            }
+            >gerenciar{
+                -gerenciar_artista
+                -gerenciar_at
+                -gerenciar_cds
+                -gerenciar_musica
+                -gerenciar_user
+                -gerenciar
+            }
+        }
+        >alterar{
+            -alterar
+        }
+        >artistas{
+            -artista
+        }
+        >audio{
+            -audio
+        }
+        >avaliar_site{
+            -avaliar_site
+        }
+        >cabeçalhos{
+            -cabeçalho_com_login_sem_menu
+            -cabeçalho_com_login
+            -cabeçalho_sem_login
+        }
+        >cadastrar{
+            -cadastro
+        }
+        >carrinho{
+            -carrinho
+            -musica
+        }
+        >compra{
+            -comprar
+            -final_compra
+        }
+        >favoritos{
+            -favoritos
+        }
+        >historico{
+            -historico
+        }
+        >login{
+            -login
+        }
+        >perfil{
+            -adm
+            -perfil
+        }
+        >produto{
+            -produto_part2
+            -produto_part3
+            -produto_responsivo
+            -produto
+        }
+        >rodape{
+            -perguntas_frequentes
+            -politica_comercial
+            -rodape
+        }
+        >sugestao{
+            -sugestao
+        }
+        >tela_inicial{
+            -artistas
+            -avaliacao
+            -carrossel
+            -destaque
+            -genero
+        }
+        >todos_produtos{
+            -todos_os_produtos_filtro
+            -todos_os_produtos_ordenar
+            -todos_os_produtos_produto
+            -todos_os_produtos_responsividade
+        }
+    }
     >html{
         >login_cadastro{
             >perfil{
@@ -83,7 +110,6 @@ php_matriz{
                         -gerenciar_musicas
                         -gerenciar_atividades
                     }
-                    >puro{...}
                 }
                 >butoes{
                     -favoritos
@@ -91,12 +117,10 @@ php_matriz{
                     -carrinho
                     -historico_compras
                 }
-                >uplouds{...}
-                -editar_cliente (alterar_dados)
-                -index (perfil_user)
-                -perfil_adm
+                -alterar_dados
+                -user
+                -adm
             }
-            >puro{...}
             -cadastro
             -login
         }
@@ -105,47 +129,21 @@ php_matriz{
             -index_logado
         }
         >produtos{
-            -todos_produtos
-            -artista
-            -detalhes_cd (produto)
             >compra{
                 -finalizar compra
                 -compra
             }
+            -todos_os_produtos
+            -artista
+            -produto
         }
         >rodape{
                 -politica_comercial
-                -avaliar_site
+                -avaliar
                 -perguntas_frequentes
             }
+        -audio
     }
-    >imagens{...}
-    >img_code{...}
+    >img{...}
     >js{...}
 }
-
-
-
-
-Alterações:
-
-produto info
-título 
-capa 
-disponibilidade
-preço 
-os nomes e os tempos das músicas 
-nomes dos artistas 
-descrição 
-ano de lançamento 
-gênero 
-procedência
-trecho de uma música
-
-
-Pagamento
-forma de pagamento (à vista ou a 
-prazo) 
-tipo de pagamento (boleto bancário ou cartão) 
-as opções de envio (transporte: aéreo ou marítimo) 
-endereço de entrega
