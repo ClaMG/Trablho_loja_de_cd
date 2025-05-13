@@ -199,10 +199,17 @@ php_matriz{
             -destaque
         }
         >todos_produtos{
-            -todos_os_produtos_filtro
-            -todos_os_produtos_ordenar
-            -todos_os_produtos_produto
-            -todos_os_produtos_responsividade
+            >produto{
+                -nome_cd
+            }
+            -favoritos
+            -filtro_itens_artista
+            -filtro_itens_destaque
+            -filtro_itens_genero
+            -filtro_itens_musica
+            -filtro_part1
+            -filtro_part2
+            -ordernar
         }
     }
 }
